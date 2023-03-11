@@ -34,7 +34,6 @@ class _DetailPageState extends State<detailsArticle> {
               widget.article['image'],
               fit: BoxFit.cover,
               width:400,
-              
             ),
           ),
           Padding(
@@ -79,7 +78,7 @@ class _DetailPageState extends State<detailsArticle> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                       // _addToCart();
+                        // _addToCart();
                         ajouterElementAuPanier();
                       },
                       child: Text('Ajouter au panier'),
@@ -100,7 +99,7 @@ class _DetailPageState extends State<detailsArticle> {
 // Obtenir une référence à la collection "carts"
     final cartCollection = FirebaseFirestore.instance.collection('carts');
     final User? user = _auth.currentUser;
-   // final String? uid = user?.uid;
+    // final String? uid = user?.uid;
 
     final DocumentReference cartRef = _firestore.collection('carts').doc(uid);
 
@@ -123,39 +122,8 @@ class _DetailPageState extends State<detailsArticle> {
       ),
     );
   }
- void ajouterElementAuPanier()
-  {
-    /*final uid = FirebaseAuth.instance.currentUser?.uid;
-
-    // Obtenir une référence à la collection "carts"
-    final cartCollection = FirebaseFirestore.instance.collection('carts');
-    final User? user = _auth.currentUser;
-    final DocumentReference cartRef = _firestore.collection('carts').doc(uid);
-
-    // Vérifier si widget.article est de type Map<dynamic, dynamic>
-    if (widget.article is Map<dynamic, dynamic>) {
-      cartRef.get().then((cartSnapshot) {
-        if (cartSnapshot.exists) {
-          cartRef.update({
-            'items': FieldValue.arrayUnion([widget.article])
-          });
-        } else {
-          cartRef.set({
-            'items': [widget.article]
-          });
-        }
-      });
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Article ajouté au panier'),
-          duration: Duration(seconds: 2),
-        ),
-      );
-    } else {
-      // Gérer l'erreur si widget.article n'est pas de type Map<dynamic, dynamic>
-      print('Erreur: widget.article n\'est pas de type Map<dynamic, dynamic>');
-    }*/
+  void ajouterElementAuPanier() async
+  {/*
     final uid = FirebaseAuth.instance.currentUser?.uid;
 
     // Obtenir une référence à la collection "carts"
@@ -201,8 +169,43 @@ class _DetailPageState extends State<detailsArticle> {
       ),
     );
 
+*/
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    var currentUser = _auth.currentUser;
+    final Map<String, dynamic> articleData = widget.article.data() as Map<String, dynamic>;
+    CollectionReference _collectionRef =
+    FirebaseFirestore.instance.collection("carts");
+    var id = FirebaseFirestore.instance.collection("carts").doc();
+
+    return _collectionRef
+        .doc(currentUser!.email)
+        .collection("items")
+        .doc()
+        .set({
+      "titre": {articleData['titre']},
+      "marque": {articleData['marque']},
+      "taille": {articleData['taille']},
+      "prix": {articleData['prix']},
+      "image": {articleData['image']},
+    }).then((value) {
+      // Afficher un message SnackBar lorsque l'article est ajouté avec succès
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("L'article a été ajouté au panier"),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      print(id);
+    });
+
+
+
+
+
+
+
 
   }
 
-  }
+}
 
