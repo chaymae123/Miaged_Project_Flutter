@@ -33,6 +33,8 @@ class _DetailPageState extends State<detailsArticle> {
             child: Image.network(
               widget.article['image'],
               fit: BoxFit.cover,
+              width:400,
+              
             ),
           ),
           Padding(
