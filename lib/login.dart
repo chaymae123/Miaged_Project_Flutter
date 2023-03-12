@@ -59,10 +59,15 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: TextFormField(
                     controller: _usernameController,
-                    validator: validateTextField,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Ce champ est obligatoire';
+                      }
+                      return null;
+                    },
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      labelText: 'Username',
+                      labelText: 'Login',
                       prefixIcon: Icon(Icons.person_2_sharp),
                     ),
                   ),
@@ -75,7 +80,12 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: TextFormField(
                     controller: _passwordController,
-                    validator: validateTextField,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Ce champ est obligatoire';
+                      }
+                      return null;
+                    },
                     obscureText: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -100,7 +110,7 @@ class LoginPage extends StatelessWidget {
     );
     };
     } catch (e) {
-    Fluttertoast.showToast(msg: e.toString());
+    Fluttertoast.showToast(msg: "Merci de saisir vos identifiants correctement");
     }
     },
 
