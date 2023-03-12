@@ -204,30 +204,6 @@ class signUp extends StatelessWidget {
     }
     return null;
   }
-  /*void signIn() async {
-    String email = _emailController.text.trim();
-    String password = _passwordController.text.trim();
-    String confirmpassword = _confpasswordController.text.trim();
-    if (password == confirmpassword) {
-      try {
-        final User? user = (await _auth.createUserWithEmailAndPassword(
-            email: email, password: password))
-            .user;
-        if (user != null) {
-          Fluttertoast.showToast(msg: "user created");
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => home()) ,
 
-          );
-        }
-      } catch (e) {
-        Fluttertoast.showToast(msg: e.toString());
-        print(e);
-      }
-    } else {
-      Fluttertoast.showToast(msg: "Passwords don't match");
-    }
-  }*/
 
 }
