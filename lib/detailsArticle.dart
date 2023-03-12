@@ -123,53 +123,7 @@ class _DetailPageState extends State<detailsArticle> {
     );
   }
   void ajouterElementAuPanier() async
-  {/*
-    final uid = FirebaseAuth.instance.currentUser?.uid;
-
-    // Obtenir une référence à la collection "carts"
-    final cartCollection = FirebaseFirestore.instance.collection('carts');
-    final User? user = _auth.currentUser;
-    final DocumentReference cartRef = _firestore.collection('carts').doc(uid);
-
-    final Map<String, dynamic> articleData = widget.article.data() as Map<String, dynamic>;
-
-    // Vérifier que les données sont valides
-    if (articleData['titre'] == null ||
-        articleData['taille'] == null ||
-        articleData['marque'] == null ||
-        articleData['prix'] == null) {
-      Fluttertoast.showToast(
-          msg: "Article invalide",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 16.0
-      );
-      return;
-    }
-
-    cartRef.get().then((cartSnapshot) {
-      if (cartSnapshot.exists) {
-        cartRef.update({
-          'items': FieldValue.arrayUnion([articleData])
-        });
-      } else {
-        cartRef.set({
-          'items': [articleData]
-        });
-      }
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Article ajouté au panier'),
-        duration: Duration(seconds: 2),
-      ),
-    );
-
-*/
+  {
     final FirebaseAuth _auth = FirebaseAuth.instance;
     var currentUser = _auth.currentUser;
     final Map<String, dynamic> articleData = widget.article.data() as Map<String, dynamic>;
