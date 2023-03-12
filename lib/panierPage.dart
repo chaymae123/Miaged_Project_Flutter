@@ -105,10 +105,7 @@ class panierPage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Acheter'),
-                      ),
+
                     ],
                   ),
                 ),
