@@ -95,7 +95,8 @@ class _HomePageState extends State<home> with SingleTickerProviderStateMixin {
                         child: Card(
                           child: ListTile(
                             leading: SizedBox(
-                              width: 200,
+                              width: 50,
+                              height: 50,
                               child: Image.network(article['image']),
                             ),
                             title: Text(article['titre']),

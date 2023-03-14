@@ -36,6 +36,7 @@ class LoginPage extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Bienvenue dans Miaged Application !',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
