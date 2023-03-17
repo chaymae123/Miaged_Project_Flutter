@@ -10,7 +10,7 @@ Le MVP de l'application Miaged que j'ai mis en place contient:
 
 4-Le panier, l'application dispose d'une page panier qui va vous permettre de voir les différents articles que vous avez ajouté au panier avec la possibilité de retirer un aurticle et voir le total que vous devez payer
 
-5-Profil Utilisateur, La section profil utilisateur va vous permettre d'accéder aux informations de votre profil afin d’en vérifier l’exactitude et de les modifier sur besoin
+5-Profil Utilisateur, La section profil utilisateur va vous permettre d'accéder aux informations de votre profil afin d’en vérifier l’exactitude et de les modifier sur besoin, vous pouvez valider vos modification en cliquant sur le bouton valider et le bouton déconnecter je l'ai remplacé par un icon de déconnexion en haut de la page
 
 6-Filtrer sur la liste des vêtements, dans la paage home, vous pouvez filtrer les articles pour afficher seulement une catégorie (Tous, Femmes, Hommes, Enfants)
 
