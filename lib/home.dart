@@ -24,6 +24,7 @@ class _HomePageState extends State<home> with SingleTickerProviderStateMixin {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+
   List<String> _categories = [
     'Tous',
     'hommes',
@@ -95,8 +96,8 @@ class _HomePageState extends State<home> with SingleTickerProviderStateMixin {
                         child: Card(
                           child: ListTile(
                             leading: SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 100,
+                              height: 100,
                               child: Image.network(article['image']),
                             ),
                             title: Text(article['titre']),

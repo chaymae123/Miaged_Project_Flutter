@@ -12,6 +12,7 @@ class profilPage extends StatefulWidget {
 
 class _ProfilPageState extends State<profilPage> {
   final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // Définissez des variables pour stocker les informations de l'utilisateur
   late String _login;
@@ -61,8 +62,21 @@ class _ProfilPageState extends State<profilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Profil'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
@@ -161,11 +175,16 @@ class _ProfilPageState extends State<profilPage> {
                         'ville': _ville,
                       });
                       Navigator.pop(context);
+                      // Afficher le message de confirmation
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Vos modifications ont été enregistrées.')
+                        ),
+                      );
                     }
                   },
                 ),
                 SizedBox(height: 16.0),
-                ElevatedButton(
+             /*   ElevatedButton(
                   child: Text('Se déconnecter'),
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut();
@@ -174,7 +193,7 @@ class _ProfilPageState extends State<profilPage> {
                       MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
-                ),
+                ),*/
               ],
             ),
           ),
