@@ -61,12 +61,16 @@ class panierPage extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       //Get the item at this index
                       Map thisItem = items[index];
+                      String imageUrl = thisItem['image'].toString();
+                      if (imageUrl.startsWith('[') && imageUrl.endsWith(']')) {
+                        imageUrl = imageUrl.substring(1, imageUrl.length - 1);
+                      }
                       //REturn the widget for the list items
                       return ListTile(
                         leading: SizedBox(
                           width: 50,
                           height: 50,
-                          child: Image.network(thisItem['image']),
+                          child: Image.network(imageUrl),
                         ),
                         title: Text(thisItem['titre']),
                         subtitle: Text(
