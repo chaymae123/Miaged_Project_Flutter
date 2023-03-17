@@ -14,6 +14,6 @@ Le MVP de l'application Miaged que j'ai mis en place contient:
 
 6-Filtrer sur la liste des vêtements, dans la paage home, vous pouvez filtrer les articles pour afficher seulement une catégorie (Tous, Femmes, Hommes, Enfants)
 
-7- Laisser libre cours à votre imagination: Dans cette section j'ai rajouté une page d'inscription ou l'utilisateur peut s'inscrire si il dispose pas d'un compte, Mais pour le test de l'application, Merci de se connecter avec les identifiants que je vous ai fourni en haut pour manipuler l'application avec les données de test que j'ai fait pour cet utilisateur!
+7- Laisser libre cours à votre imagination: Dans cette section j'ai rajouté une page d'inscription ou l'utilisateur peut s'inscrire si il dispose pas d'un compte, Mais pour le test de l'application, Merci de se connecter avec les identifiants que je vous ai fourni en haut pour manipuler l'application avec les données de test que j'ai fait pour cet utilisateur surtout au niveau de profil de l'utilisateur!
 
 Merci , espérant que le projet que j'ai pu faire répond parfaitement à ce que vous demandez!
